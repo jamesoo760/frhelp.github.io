@@ -1,0 +1,468 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft JhengHei";
+  font-weight: 100;
+  color: #2b2d2d;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3bff00;
+}
+
+#FRhomepage {
+  position: relative;
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #f4f5f6;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*header*/
+#FRhomepage header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: #1C85E7;
+}
+.header .logo {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+}
+.header .logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 110px;
+}
+.header .nav-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.header .nav-wrapper .user-nav {
+  position: relative;
+  display: flex;
+  left: 10px;
+  flex-direction: row;
+  width: 100%;
+}
+.header .nav-wrapper a.login {
+  padding-top: 20px;
+  margin-right: 100px;
+  width: 50px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+.header .nav-wrapper .dropdown {
+  width: 220px;
+}
+.header .nav-wrapper .dropdown .dropdown-toggle {
+  
+}
+.header .nav-wrapper .dropdown .dropdown-toggle:after {
+  position: absolute;
+  padding: 21px 0 0 100px;
+  color: #fff;
+}
+.header .nav-wrapper .dropdown .dropdown-toggle img#user-avatar {
+  margin-top: 10px;
+  width: 40px;
+  border-radius: 100%;
+}
+.header .nav-wrapper .dropdown .dropdown-toggle #user-name {
+  position: absolute;
+  left: 50px;
+  margin-top: 20px;
+  color: #fff;
+}
+.header .nav-wrapper .dropdown .dropdown-menu-end {
+  right: 11px;
+}
+.header .nav-wrapper .user-nav .user-navli {
+  padding: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*sidebar*/
+#FRhomepage #sidebar {
+  position: absolute;
+  float: left;
+  width: 280px;
+  height: calc(100vh - 90px);
+  border-right: 1px solid #dfe1e5;
+  background-color: #fafafa;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*main*/
+#FRhomepage .main {
+  position: relative;
+  left: 280px;
+  width: calc(100% - 280px);
+  height: calc(100vh - 90px);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*pagebar*/
+#FRhomepage .main .pagebar {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  background-color: #3d3f41;
+}
+.pagebar ul {
+  position: absolute;
+  left: 5px;
+}
+.pagebar ul .active {
+  background-color: #f4f5f6;
+}
+.pagebar ul .hometag {
+  width: 45px;
+  height: 25px;
+  border-radius: 2px 2px 0 0;
+  cursor: pointer;
+}
+.pagebar ul .hometag img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+}
+.pagebar ul li {
+  position: relative;
+  display: block;
+  margin-bottom: 0px;
+  margin-left: 2px;
+  float: left;
+  top: 5px;
+  height: 25px;
+  border-radius: 2px 2px 0 0;
+  background-color: #dddddd;
+}
+.pagebar ul li .title {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0px 0px 10px;
+  margin: 0 20px 0 0;
+  max-width: 120px;
+  overflow: hidden;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: default;
+}
+.pagebar ul li .x {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  background-color: #b3c1d3;
+  cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*mainblock*/
+#FRhomepage .main iframe.mainblock {
+  width: 100%;
+  height: calc(100% - 30px);
+  border: none;
+}
+.main .mainblock .leftblock {
+  position: relative;
+  float: left;
+  width: calc(100% - 350px);
+  height: 100%;
+}
+.main .mainblock .leftblock .area.t {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #dfe1e5;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+.main .mainblock .leftblock .area.t .content {
+  position: relative;
+  width: calc(100% - 250px);
+}
+.main .mainblock .leftblock .area.t .content h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.main .mainblock .leftblock .area.t .content ul {
+  width: 100%;
+  padding-left: 25px;
+}
+.main .mainblock .leftblock .area.t .content ul li {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.main .mainblock .leftblock .area.t div img {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 220px;
+}
+.main .mainblock .leftblock .area.b, .main .mainblock .leftblock .t, .main .mainblock .leftblock .b {
+  position: relative;
+  width: 100%;
+}
+.main .mainblock .leftblock .area.b .t, .main .mainblock .leftblock .t .t, .main .mainblock .leftblock .b .t {
+  position: relative;
+  height: 217px;
+  margin-bottom: 10px;
+}
+.main .mainblock .leftblock .area.b .t .area.lt, .main .mainblock .leftblock .t .t .area.lt, .main .mainblock .leftblock .b .t .area.lt {
+  float: left;
+}
+.main .mainblock .leftblock .area.b .t .area.rt, .main .mainblock .leftblock .t .t .area.rt, .main .mainblock .leftblock .b .t .area.rt {
+  float: right;
+}
+.main .mainblock .leftblock .area.b .b, .main .mainblock .leftblock .t .b, .main .mainblock .leftblock .b .b {
+  position: relative;
+  height: 217px;
+}
+.main .mainblock .leftblock .area.b .b .area.lb, .main .mainblock .leftblock .t .b .area.lb, .main .mainblock .leftblock .b .b .area.lb {
+  float: left;
+}
+.main .mainblock .leftblock .area.b .b .area.rb, .main .mainblock .leftblock .t .b .area.rb, .main .mainblock .leftblock .b .b .area.rb {
+  float: right;
+}
+.main .mainblock .leftblock .area.b .area.lt, .main .mainblock .leftblock .area.b .area.rt, .main .mainblock .leftblock .area.b .area.lb, .main .mainblock .leftblock .area.b .area.rb, .main .mainblock .leftblock .t .area.lt, .main .mainblock .leftblock .t .area.rt, .main .mainblock .leftblock .t .area.lb, .main .mainblock .leftblock .t .area.rb, .main .mainblock .leftblock .b .area.lt, .main .mainblock .leftblock .b .area.rt, .main .mainblock .leftblock .b .area.lb, .main .mainblock .leftblock .b .area.rb {
+  position: relative;
+  display: inline-block;
+  padding: 15px 35px;
+  width: calc(50% - 5px);
+  border: 1px solid #dfe1e5;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+.main .mainblock .leftblock .area.b .area.lt .title, .main .mainblock .leftblock .area.b .area.rt .title, .main .mainblock .leftblock .area.b .area.lb .title, .main .mainblock .leftblock .area.b .area.rb .title, .main .mainblock .leftblock .t .area.lt .title, .main .mainblock .leftblock .t .area.rt .title, .main .mainblock .leftblock .t .area.lb .title, .main .mainblock .leftblock .t .area.rb .title, .main .mainblock .leftblock .b .area.lt .title, .main .mainblock .leftblock .b .area.rt .title, .main .mainblock .leftblock .b .area.lb .title, .main .mainblock .leftblock .b .area.rb .title {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.main .mainblock .leftblock .area.b .area.lt .title h3, .main .mainblock .leftblock .area.b .area.rt .title h3, .main .mainblock .leftblock .area.b .area.lb .title h3, .main .mainblock .leftblock .area.b .area.rb .title h3, .main .mainblock .leftblock .t .area.lt .title h3, .main .mainblock .leftblock .t .area.rt .title h3, .main .mainblock .leftblock .t .area.lb .title h3, .main .mainblock .leftblock .t .area.rb .title h3, .main .mainblock .leftblock .b .area.lt .title h3, .main .mainblock .leftblock .b .area.rt .title h3, .main .mainblock .leftblock .b .area.lb .title h3, .main .mainblock .leftblock .b .area.rb .title h3 {
+  margin-left: 7px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.main .mainblock .leftblock .area.b .area.lt .title a, .main .mainblock .leftblock .area.b .area.rt .title a, .main .mainblock .leftblock .area.b .area.lb .title a, .main .mainblock .leftblock .area.b .area.rb .title a, .main .mainblock .leftblock .t .area.lt .title a, .main .mainblock .leftblock .t .area.rt .title a, .main .mainblock .leftblock .t .area.lb .title a, .main .mainblock .leftblock .t .area.rb .title a, .main .mainblock .leftblock .b .area.lt .title a, .main .mainblock .leftblock .b .area.rt .title a, .main .mainblock .leftblock .b .area.lb .title a, .main .mainblock .leftblock .b .area.rb .title a {
+  position: absolute;
+  right: 0px;
+  font-size: 13px;
+  color: #1a73e8;
+  text-decoration: none;
+}
+.main .mainblock .leftblock .area.b .area.lt .title a:hover, .main .mainblock .leftblock .area.b .area.rt .title a:hover, .main .mainblock .leftblock .area.b .area.lb .title a:hover, .main .mainblock .leftblock .area.b .area.rb .title a:hover, .main .mainblock .leftblock .t .area.lt .title a:hover, .main .mainblock .leftblock .t .area.rt .title a:hover, .main .mainblock .leftblock .t .area.lb .title a:hover, .main .mainblock .leftblock .t .area.rb .title a:hover, .main .mainblock .leftblock .b .area.lt .title a:hover, .main .mainblock .leftblock .b .area.rt .title a:hover, .main .mainblock .leftblock .b .area.lb .title a:hover, .main .mainblock .leftblock .b .area.rb .title a:hover {
+  text-decoration: underline;
+}
+.main .mainblock .leftblock .area.b .area.lt .title img, .main .mainblock .leftblock .area.b .area.rt .title img, .main .mainblock .leftblock .area.b .area.lb .title img, .main .mainblock .leftblock .area.b .area.rb .title img, .main .mainblock .leftblock .t .area.lt .title img, .main .mainblock .leftblock .t .area.rt .title img, .main .mainblock .leftblock .t .area.lb .title img, .main .mainblock .leftblock .t .area.rb .title img, .main .mainblock .leftblock .b .area.lt .title img, .main .mainblock .leftblock .b .area.rt .title img, .main .mainblock .leftblock .b .area.lb .title img, .main .mainblock .leftblock .b .area.rb .title img {
+  position: absolute;
+  top: 3px;
+  left: -15px;
+  width: 20px;
+  height: 20px;
+}
+.main .mainblock .leftblock .area.b .area.lt .content, .main .mainblock .leftblock .area.b .area.rt .content, .main .mainblock .leftblock .area.b .area.lb .content, .main .mainblock .leftblock .area.b .area.rb .content, .main .mainblock .leftblock .t .area.lt .content, .main .mainblock .leftblock .t .area.rt .content, .main .mainblock .leftblock .t .area.lb .content, .main .mainblock .leftblock .t .area.rb .content, .main .mainblock .leftblock .b .area.lt .content, .main .mainblock .leftblock .b .area.rt .content, .main .mainblock .leftblock .b .area.lb .content, .main .mainblock .leftblock .b .area.rb .content {
+  position: relative;
+}
+.main .mainblock .leftblock .area.b .area.lt .content li, .main .mainblock .leftblock .area.b .area.rt .content li, .main .mainblock .leftblock .area.b .area.lb .content li, .main .mainblock .leftblock .area.b .area.rb .content li, .main .mainblock .leftblock .t .area.lt .content li, .main .mainblock .leftblock .t .area.rt .content li, .main .mainblock .leftblock .t .area.lb .content li, .main .mainblock .leftblock .t .area.rb .content li, .main .mainblock .leftblock .b .area.lt .content li, .main .mainblock .leftblock .b .area.rt .content li, .main .mainblock .leftblock .b .area.lb .content li, .main .mainblock .leftblock .b .area.rb .content li {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 25px;
+  list-style: none;
+}
+.main .mainblock .leftblock .area.b .area.lt .content li:before, .main .mainblock .leftblock .area.b .area.rt .content li:before, .main .mainblock .leftblock .area.b .area.lb .content li:before, .main .mainblock .leftblock .area.b .area.rb .content li:before, .main .mainblock .leftblock .t .area.lt .content li:before, .main .mainblock .leftblock .t .area.rt .content li:before, .main .mainblock .leftblock .t .area.lb .content li:before, .main .mainblock .leftblock .t .area.rb .content li:before, .main .mainblock .leftblock .b .area.lt .content li:before, .main .mainblock .leftblock .b .area.rt .content li:before, .main .mainblock .leftblock .b .area.lb .content li:before, .main .mainblock .leftblock .b .area.rb .content li:before {
+  position: absolute;
+  left: -10px;
+  content: "•";
+  color: #686868;
+}
+.main .mainblock .leftblock .area.b .area.lt .content li a, .main .mainblock .leftblock .area.b .area.rt .content li a, .main .mainblock .leftblock .area.b .area.lb .content li a, .main .mainblock .leftblock .area.b .area.rb .content li a, .main .mainblock .leftblock .t .area.lt .content li a, .main .mainblock .leftblock .t .area.rt .content li a, .main .mainblock .leftblock .t .area.lb .content li a, .main .mainblock .leftblock .t .area.rb .content li a, .main .mainblock .leftblock .b .area.lt .content li a, .main .mainblock .leftblock .b .area.rt .content li a, .main .mainblock .leftblock .b .area.lb .content li a, .main .mainblock .leftblock .b .area.rb .content li a {
+  margin-left: 5px;
+  color: #2b2d2d;
+  text-decoration: none;
+}
+.main .mainblock .leftblock .area.b .area.lt .content li a:hover, .main .mainblock .leftblock .area.b .area.rt .content li a:hover, .main .mainblock .leftblock .area.b .area.lb .content li a:hover, .main .mainblock .leftblock .area.b .area.rb .content li a:hover, .main .mainblock .leftblock .t .area.lt .content li a:hover, .main .mainblock .leftblock .t .area.rt .content li a:hover, .main .mainblock .leftblock .t .area.lb .content li a:hover, .main .mainblock .leftblock .t .area.rb .content li a:hover, .main .mainblock .leftblock .b .area.lt .content li a:hover, .main .mainblock .leftblock .b .area.rt .content li a:hover, .main .mainblock .leftblock .b .area.lb .content li a:hover, .main .mainblock .leftblock .b .area.rb .content li a:hover {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+.main .mainblock .leftblock .area.b .lt, .main .mainblock .leftblock .t .lt, .main .mainblock .leftblock .b .lt {
+  top: 0;
+  left: 0;
+}
+.main .mainblock .leftblock .area.b .rt, .main .mainblock .leftblock .t .rt, .main .mainblock .leftblock .b .rt {
+  top: 0;
+  right: 0;
+}
+.main .mainblock .leftblock .area.b .lb, .main .mainblock .leftblock .t .lb, .main .mainblock .leftblock .b .lb {
+  bottom: 0;
+  left: 0;
+}
+.main .mainblock .leftblock .area.b .rb, .main .mainblock .leftblock .t .rb, .main .mainblock .leftblock .b .rb {
+  bottom: 0;
+  right: 0;
+}
+.main .mainblock .rightblock {
+  position: relative;
+  float: right;
+  width: 350px;
+  height: 100%;
+  padding-left: 30px;
+}
+.main .mainblock .rightblock .area {
+  padding: 15px;
+  border: 1px solid #dfe1e5;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+.main .mainblock .rightblock .area h3 {
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: 900;
+}
+.main .mainblock .rightblock .area h4 {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-weight: 900;
+}
+.main .mainblock .rightblock .area h4:before {
+  position: absolute;
+  top: 6px;
+  left: -3px;
+  width: 2px;
+  height: 10px;
+  content: "";
+  border-left: 3px solid #1C85E7;
+}
+.main .mainblock .rightblock .area p, .main .mainblock .rightblock .area li, .main .mainblock .rightblock .area span {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.main .mainblock .rightblock .area li {
+  list-style: none;
+}
+.main .mainblock .rightblock .area a {
+  color: #2b2d2d;
+  text-decoration: none;
+}
+.main .mainblock .rightblock .area a:hover {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+.main .mainblock .rightblock .area .link {
+  color: #1a73e8;
+}
+.main .mainblock .rightblock .area .imp {
+  color: #e94235;
+}
+.main .mainblock .rightblock .area button {
+  margin: 20px 5px 0px 5px;
+  padding: 5px 25px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.main .mainblock .rightblock .area .btnCreate {
+  background-color: #34a853;
+}
+.main .mainblock .rightblock .area .btnCreate:hover {
+  background-color: #43ba62;
+}
+.main .mainblock .rightblock .area .btnGet {
+  background-color: #1a73e8;
+}
+.main .mainblock .rightblock .area .btnGet:hover {
+  background-color: #4993f4;
+}
+.main .mainblock .rightblock .area img {
+  margin-top: 5px;
+  width: 288px;
+  height: 118.681px;
+}
+.main .mainblock .rightblock .t, .main .mainblock .rightblock .m {
+  margin-bottom: 15px;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*footer*/
+#FRhomepage footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #3d3f41;
+}
+.footer .footer-inner {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+}
+.footer .footer-inner a {
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.footer .footer-inner a:hover {
+  text-decoration: underline;
+}
+.powered-by-zendesk {
+  display: none !important;
+  position: fixed !important;
+  top: auto !important;
+  bottom: 5px;
+  right: 15px;
+  padding: 0;
+  height: auto;
+  background-color: transparent !important;
+}
+.powered-by-zendesk svg {
+  fill: #fff;
+}
+.powered-by-zendesk a {
+  color: #fafafa;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: #ebebeb;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d3f41;
+}
