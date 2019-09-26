@@ -129,13 +129,13 @@ body {
 .pagebar ul .active {
   background-color: #f4f5f6;
 }
-.pagebar ul .hometag {
+.pagebar ul #hometag {
   width: 45px;
   height: 25px;
   border-radius: 2px 2px 0 0;
   cursor: pointer;
 }
-.pagebar ul .hometag img {
+.pagebar ul #hometag img {
   position: absolute;
   top: 50%;
   left: 50%;
