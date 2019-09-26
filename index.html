@@ -1,46 +1,64 @@
-<div id="FRhomepage">
-  <header class="header">
-    <div class="logo">
-      {{#link 'help_center'}}
-        <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
-      {{/link}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Finereport Help Center</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css" type="text/css" >
+    <style></style>
+  </head>
+  <body>
+    <div id="FRhomepage">
+      <header class="header">
+        <div class="logo"></div>
+        <div class="nav-wrapper">
+          <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}"></span>
+          <nav class="user-nav" id="user-nav">
+            <div class="user-navli">文檔</div>
+            <div class="user-navli">任務</div>
+            <div class="user-navli">Demo</div>
+            <div class="user-navli">官網</div>
+            <div class="user-navli">論壇</div>
+            <div class="user-navli">提問</div>
+            <div class="user-navli">視頻</div>
+            <div class="user-navli">認證</div>
+            <div class="user-navli">更多</div>
+            <!--{{link 'community'}}
+            {{link 'new_request' class='submit-a-request'}}-->
+          </nav>
+        </div>
+      </header>
+      <div class="sidebar">
+        <iframe id="sidebar" src="https://jamesoo760.github.io/frhelp.github.io/selectbar.html" frameborder="0" scrolling="auto"></iframe>
+      </div>
+      <div class="main">
+        <div class="pagebar" id="tabs">
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="hometag"><img src="http://help.finereport.com.tw/view/help2019tw/resources/images/icon_home.png"/></li>
+            <li id="tab-100"><a class="title" data-toggle="tab" href="#tab-content-100">第100頁</a>
+              <div class="x" onclick="deleteTab(100)"></div>
+            </li>
+            <li class="active" id="tab-101"><a class="title" data-toggle="tab" href="#tab-content-101">第101頁</a>
+              <div class="x" onclick="deleteTab(101)"></div>
+            </li>
+            <li id="tab-10000002"><a class="title" data-toggle="tab" href="#tab-content-102">第10000002頁</a>
+              <div class="x" onclick="deleteTab(10000002)"></div>
+            </li>
+          </ul>
+        </div>
+        <iframe id="tabCon" class="mainblock" src="https://jamesoo760.github.io/frhelp.github.io/homepage.html" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <footer class="footer"></footer>
     </div>
-    <div class="nav-wrapper">
-      <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}"></span>
-      <nav class="user-nav" id="user-nav">
-        <div class="user-navli">文檔</div>
-        <div class="user-navli">任務</div>
-        <div class="user-navli">Demo</div>
-        <div class="user-navli">官網</div>
-        <div class="user-navli">論壇</div>
-        <div class="user-navli">提問</div>
-        <div class="user-navli">視頻</div>
-        <div class="user-navli">認證</div>
-        <div class="user-navli">更多</div>
-        <!--{{link 'community'}}
-        {{link 'new_request' class='submit-a-request'}}-->
-      </nav>
-    </div>
-  </header>
-  <div class="sidebar">
-    <iframe id="sidebar" src="https://jamesoo760.github.io/frhelp.github.io/selectbar.html" frameborder="0" scrolling="auto"></iframe>
-  </div>
-  <div class="main">
-    <div class="pagebar" id="tabs">
-      <ul class="nav nav-tabs" id="myTab">
-        <li class="hometag"><img src="http://help.finereport.com.tw/view/help2019tw/resources/images/icon_home.png"/></li>
-        <li id="tab-100"><a class="title" data-toggle="tab" href="#tab-content-100">第100頁</a>
-          <div class="x" onclick="deleteTab(100)"></div>
-        </li>
-        <li class="active" id="tab-101"><a class="title" data-toggle="tab" href="#tab-content-101">第101頁</a>
-          <div class="x" onclick="deleteTab(101)"></div>
-        </li>
-        <li id="tab-10000002"><a class="title" data-toggle="tab" href="#tab-content-102">第10000002頁</a>
-          <div class="x" onclick="deleteTab(10000002)"></div>
-        </li>
-      </ul>
-    </div>
-    <iframe id="tabCon" class="mainblock" src="https://jamesoo760.github.io/frhelp.github.io/homepage.html" frameborder="0" scrolling="no"></iframe>
-  </div>
-  <footer class="footer"></footer>
-</div>
+  </body>
+  <script type="text/javascript">
+    
+  </script>
+</html>
+
+
+
+
+
+
+
