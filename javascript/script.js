@@ -58,10 +58,5 @@ var btns = document.getElementById('myTab').getElementsByTagName('li');
             };
             this.className = 'select';
             tabCon.src = 'model'+(this.index+1)+'.html';
-            // 进行高度控制和处理
-            setTimeout(function(){
-                tabCon.style.height = tabCon.contentWindow.document.body.offsetHeight+'px';
-                console.log(tabCon.contentWindow.document.body.offsetHeight);
-            },100);
         }
     };
