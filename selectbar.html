@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FR - Select Bar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Microsoft JhengHei";
+        font-weight: 100;
+        color: #2b2d2d;
+        box-sizing: border-box;
+        list-style: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background-color: #f4f5f6;
+      }
+
+      .on {
+        background-color: #1a73e8 !important;
+      }
+      .on a {
+        color: #fafafa;
+      }
+
+      .sidebar {
+        width: 100%;
+        background-color: #f4f5f6;
+        overflow: auto;
+        display: block !important;
+      }
+      .sidebar .top {
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid #dfe1e5;
+      }
+      .sidebar .top ul {
+        display: flex;
+        justify-content: center;
+      }
+      .sidebar .top ul li {
+        margin: 19px 2px;
+        padding: 5px 25px;
+        list-style: none;
+        border-radius: 100px;
+        background-color: #fafafa;
+        box-shadow: 0 0 1px 1px rgba(45, 45, 45, 0.1);
+        cursor: pointer;
+      }
+      .sidebar .top ul li a {
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+      }
+      .sidebar .bottom {
+        width: 100%;
+        height: 100%;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton {
+        border-bottom: 1px solid #dfe1e5;
+        background-color: #fafafa;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton input {
+        position: absolute;
+        opacity: 0;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton label {
+        position: relative;
+        cursor: pointer;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton {
+        position: relative;
+        height: 50px;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton h6 {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+        color: #fafafa;
+        line-height: 25px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #1a73e8;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton h4 {
+        position: absolute;
+        top: 50%;
+        left: 55px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        font-size: 16px;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton {
+        display: none;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton {
+        line-height: 30px;
+        font-size: 16px;
+        border-top: 1px solid #dfe1e5;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton div.midbutton h6 {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-right: 5px;
+        float: left;
+        letter-spacing: 1.5px;
+        color: #fafafa;
+        background-color: #dfe1e5;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton div.midbutton h5 {
+        background-color: #f4f5f6;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton {
+        display: none;
+        background-color: #e8eaef;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton {
+        font-size: 12px;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton:first-child {
+        border-top: 1px solid #dfe1e5;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton:hover {
+        background-color: #d7dae0;
+      }
+      .sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton .sign {
+        padding: 2px 5px 2px 5px;
+        margin: 0px 5px;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #b6bac4;
+      }
+
+      /*scrollbar */
+      ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+      }
+
+      ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+        background: #ebebeb;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(61, 63, 65, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="top">
+        <ul>
+          <li class="on"><a href="#tabs-learn">功能學習</a></li>
+          <li><a href="#tabs-practice">實例練習</a></li>
+        </ul>
+      </div>
+      <div class="bottom learn" id="tabs-learn">
+        <ul class="buttonblock">
+          <li class="bigbutton">
+            <input id="sub-group-A" type="checkbox" name="sub-group-A"/>
+            <label for="sub-group-A">
+              <div class="bigbutton">
+                <h6>A</h6>
+                <h4>報表設計器</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-A00" type="checkbox" name="sub-group-A00"/>
+                <label for="sub-group-A00">
+                  <div class="midbutton">
+                    <h6>A00</h6>
+                    <h5>使用報表設計器</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A00-00 </a><a class="text">安裝報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-01 </a><a class="text">打開報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-02 </a><a class="text">獲取激活碼</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A01" type="checkbox" name="sub-group-A01"/>
+                <label for="sub-group-A01">
+                  <div class="midbutton">
+                    <h6>A01</h6>
+                    <h5>資料來源連接</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A01-00 </a><a class="text">資料連接-Excel, CSV</a></li>
+                  <li class="minbutton"><a class="sign">A01-01 </a><a class="text">資料連接-SQL Server</a></li>
+                  <li class="minbutton"><a class="sign">A01-02 </a><a class="text">資料連接-My SQL</a></li>
+                  <li class="minbutton"><a class="sign">A01-03 </a><a class="text">資料連接-Oracle</a></li>
+                  <li class="minbutton"><a class="sign">A01-04 </a><a class="text">資料連接-</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A02" type="checkbox" name="sub-group-A02"/>
+                <label for="sub-group-A02">
+                  <div class="midbutton">
+                    <h6>A02</h6>
+                    <h5>建立報表</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A02-00 </a><a class="text">新建普通報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-01 </a><a class="text">新建複合式報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-02 </a><a class="text">新建決策報表</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A03" type="checkbox" name="sub-group-A03"/>
+                <label for="sub-group-A03">
+                  <div class="midbutton">
+                    <h6>A03</h6>
+                    <h5>建立資料集</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A03-00 </a><a class="text">資料庫查詢</a></li>
+                  <li class="minbutton"><a class="sign">A03-01 </a><a class="text">內建資料集</a></li>
+                  <li class="minbutton"><a class="sign">A03-02 </a><a class="text">檔案資料集</a></li>
+                  <li class="minbutton"><a class="sign">A03-03 </a><a class="text">儲存程序</a></li>
+                  <li class="minbutton"><a class="sign">A03-04 </a><a class="text">關聯資料集</a></li>
+                  <li class="minbutton"><a class="sign">A03-05 </a><a class="text">樹資料集</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A04" type="checkbox" name="sub-group-A04"/>
+                <label for="sub-group-A04">
+                  <div class="midbutton">
+                    <h6>A04</h6>
+                    <h5>參數面版元件</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A04-00 </a><a class="text">文字元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-01 </a><a class="text">標籤元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-02 </a><a class="text">按鈕元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-03 </a><a class="text">下拉框元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-04 </a><a class="text">下拉複選框元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-05 </a><a class="text">日期元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-06 </a><a class="text">數字元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-07 </a><a class="text">下拉樹元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-08 </a><a class="text">單選按鈕組元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-09 </a><a class="text">複選按鈕組元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-10 </a><a class="text">文字域元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-11 </a><a class="text">密碼元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-12 </a><a class="text">複選按鈕元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-13 </a><a class="text">檢視表樹元件</a></li>
+                  <li class="minbutton"><a class="sign">A04-14 </a><a class="text">查詢按鈕元件</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A05" type="checkbox" name="sub-group-A05"/>
+                <label for="sub-group-A05">
+                  <div class="midbutton">
+                    <h6>A05</h6>
+                    <h5>儲存格元素</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A05-00 </a><a class="text">插入資料行</a></li>
+                  <li class="minbutton"><a class="sign">A05-01 </a><a class="text">插入普通文字</a></li>
+                  <li class="minbutton"><a class="sign">A05-02 </a><a class="text">插入RTF(富文字格式)</a></li>
+                  <li class="minbutton"><a class="sign">A05-03 </a><a class="text">插入公式</a></li>
+                  <li class="minbutton"><a class="sign">A05-04 </a><a class="text">插入圖表</a></li>
+                  <li class="minbutton"><a class="sign">A05-05 </a><a class="text">插入圖片</a></li>
+                  <li class="minbutton"><a class="sign">A05-06 </a><a class="text">插入斜線</a></li>
+                  <li class="minbutton"><a class="sign">A05-07 </a><a class="text">插入子報表</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A06" type="checkbox" name="sub-group-A06"/>
+                <label for="sub-group-A06">
+                  <div class="midbutton">
+                    <h6>A06</h6>
+                    <h5>儲存格屬性</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A06-00 </a><a class="text">擴展-左父格上父格</a></li>
+                  <li class="minbutton"><a class="sign">A06-01 </a><a class="text">擴展-左父格上父格</a></li>
+                  <li class="minbutton"><a class="sign">A06-02 </a><a class="text">擴展-左父格上父格</a></li>
+                  <li class="minbutton"><a class="sign">A06-03 </a><a class="text">擴展-左父格上父格</a></li>
+                  <li class="minbutton"><a class="sign">A06-04 </a><a class="text">擴展-左父格上父格</a></li>
+                  <li class="minbutton"><a class="sign">A06-05 </a><a class="text">擴展-左父格上父格</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A07" type="checkbox" name="sub-group-A07"/>
+                <label for="sub-group-A07">
+                  <div class="midbutton">
+                    <h6>A07</h6>
+                    <h5>懸浮元素</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A07-00 </a><a class="text">插入普通文字</a></li>
+                  <li class="minbutton"><a class="sign">A07-01 </a><a class="text">插入公式</a></li>
+                  <li class="minbutton"><a class="sign">A07-02 </a><a class="text">圖表</a></li>
+                  <li class="minbutton"><a class="sign">A07-03 </a><a class="text">圖片</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A08" type="checkbox" name="sub-group-A08"/>
+                <label for="sub-group-A08">
+                  <div class="midbutton">
+                    <h6>A08</h6>
+                    <h5>元件設定</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A08-00 </a><a class="text">文字元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-01 </a><a class="text">文字域元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-02 </a><a class="text">文字元件-------------------------------------------</a></li>
+                  <li class="minbutton"><a class="sign">A08-03 </a><a class="text">數字元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-04 </a><a class="text">密碼元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-05 </a><a class="text">按鈕元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-06 </a><a class="text">複選按鈕元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-07 </a><a class="text">單選按鈕組元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-08 </a><a class="text">複選按鈕組元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-09 </a><a class="text">下拉框元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-10 </a><a class="text">下拉複選框元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-11 </a><a class="text">日期元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-12 </a><a class="text">檔案元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-13 </a><a class="text">欄表元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-14 </a><a class="text">網頁框元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-15 </a><a class="text">下拉樹元件</a></li>
+                  <li class="minbutton"><a class="sign">A08-16 </a><a class="text">檢視表樹元件</a></li>
+                </ul>
+              </li>
+              <!--li.midbutton 條件屬性-->
+              <!--li.midbutton 超級連結-->
+              <!--li.midbutton 設計器上方工具欄-->
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-B" type="checkbox" name="sub-group-B"/>
+            <label for="sub-group-B">
+              <div class="bigbutton">
+                <h6>B</h6>
+                <h4>決策平台</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-B00" type="checkbox" name="sub-group-B00"/>
+                <label for="sub-group-B00">
+                  <div class="midbutton">
+                    <h6>B00</h6>
+                    <h5>管理系統-目錄管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B00-00 </a><a class="text">新增範本</a></li>
+                  <li class="minbutton"><a class="sign">B00-01 </a><a class="text">上報標籤</a></li>
+                  <li class="minbutton"><a class="sign">B00-02 </a><a class="text">新增連結</a></li>
+                  <li class="minbutton"><a class="sign">B00-03 </a><a class="text">新增目錄</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B01" type="checkbox" name="sub-group-B01"/>
+                <label for="sub-group-B01">
+                  <div class="midbutton">
+                    <h6>B01</h6>
+                    <h5>管理系統-使用者管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B01-00 </a><a class="text">所有使用者</a></li>
+                  <li class="minbutton"><a class="sign">B01-01 </a><a class="text">機構部門</a></li>
+                  <li class="minbutton"><a class="sign">B01-02 </a><a class="text">角色</a></li>
+                  <li class="minbutton"><a class="sign">B01-03 </a><a class="text">平台使用者</a></li>
+                  <li class="minbutton"><a class="sign">B01-04 </a><a class="text">全局設定(使用者管理)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B02" type="checkbox" name="sub-group-B02"/>
+                <label for="sub-group-B02">
+                  <div class="midbutton">
+                    <h6>B02</h6>
+                    <h5>管理系統-權限管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B02-00 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-01 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-02 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-03 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-04 </a><a class="text">權限快捷設定</a></li>
+                  <li class="minbutton"><a class="sign">B02-05 </a><a class="text">全局設定(權限管理)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-C" type="checkbox" name="sub-group-C"/>
+            <label for="sub-group-C">
+              <div class="bigbutton">
+                <h6>C</h6>
+                <h4>插件應用</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-C00" type="checkbox" name="sub-group-C00"/>
+                <label for="sub-group-C00">
+                  <div class="midbutton">
+                    <h6>C00</h6>
+                    <h5>設計器(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C00-00 </a><a class="text">設計器內存監控(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C01" type="checkbox" name="sub-group-C01"/>
+                <label for="sub-group-C01">
+                  <div class="midbutton">
+                    <h6>C01</h6>
+                    <h5>設計器(非官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C01-00 </a><a class="text">數據集中SQL可全屏(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-01 </a><a class="text">增強公式編輯器(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-02 </a><a class="text">10.0高級數據庫查詢(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-03 </a><a class="text">可選擇性黏貼(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-04 </a><a class="text">10.0日誌插件(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C02" type="checkbox" name="sub-group-C02"/>
+                <label for="sub-group-C02">
+                  <div class="midbutton">
+                    <h6>C02</h6>
+                    <h5>前端展現(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C02-00 </a><a class="text">表單內報表塊刷新(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-01 </a><a class="text">單元格進度條(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-02 </a><a class="text">滾動消息控件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-03 </a><a>數字時鐘控件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-04 </a><a class="text">條件屬性可使用頁碼參數(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-05 </a><a class="text">控件以711版本的外觀展式(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-06 </a><a class="text">國標CODE128條形碼(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-07 </a><a class="text">縮進比例控制(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-08 </a><a class="text">模版短信事件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-09 </a><a class="text">自定義滾動條(付費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-10 </a><a class="text">組件加載動畫(付費)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom practice" id="tabs-practice">
+        <ul class="buttonblock">
+          <li class="bigbutton">
+            <input id="sub-group-AT" type="checkbox" name="sub-group-AT"/>
+            <label for="sub-group-AT">
+              <div class="bigbutton">
+                <h6>A</h6>
+                <h4>報表設計器</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-AT00" type="checkbox" name="sub-group-AT00"/>
+                <label for="sub-group-AT00">
+                  <div class="midbutton">
+                    <h6>A00</h6>
+                    <h5>使用報表設計器</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A00-00 </a><a class="text">安裝報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-01 </a><a class="text">打開報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-02 </a><a class="text">獲取激活碼</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-AT01" type="checkbox" name="sub-group-AT01"/>
+                <label for="sub-group-AT01">
+                  <div class="midbutton">
+                    <h6>A01</h6>
+                    <h5>資料來源連接</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A01-00 </a><a class="text">資料連接-Excel, CSV</a></li>
+                  <li class="minbutton"><a class="sign">A01-01 </a><a class="text">資料連接-SQL Server</a></li>
+                  <li class="minbutton"><a class="sign">A01-02 </a><a class="text">資料連接-My SQL</a></li>
+                  <li class="minbutton"><a class="sign">A01-03 </a><a class="text">資料連接-Oracle</a></li>
+                  <li class="minbutton"><a class="sign">A01-04 </a><a class="text">資料連接-</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-AT02" type="checkbox" name="sub-group-AT02"/>
+                <label for="sub-group-AT02">
+                  <div class="midbutton">
+                    <h6>A02</h6>
+                    <h5>建立報表</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A02-00 </a><a class="text">新建普通報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-01 </a><a class="text">新建複合式報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-02 </a><a class="text">新建決策報表</a></li>
+                </ul>
+              </li>
+              <!--li.midbutton 建立資料集-->
+              <!--li.midbutton 參數面版元件-->
+              <!--li.midbutton 儲存格元素-->
+              <!--li.midbutton 儲存格屬性-->
+              <!--li.midbutton 懸浮元素-->
+              <!--li.midbutton 元件設定-->
+              <!--li.midbutton 條件屬性-->
+              <!--li.midbutton 超級連結-->
+              <!--li.midbutton 設計器上方工具欄-->
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-B" type="checkbox" name="sub-group-B"/>
+            <label for="sub-group-B">
+              <div class="bigbutton">
+                <h6>B</h6>
+                <h4>決策平台</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-B00" type="checkbox" name="sub-group-B00"/>
+                <label for="sub-group-B00">
+                  <div class="midbutton">
+                    <h6>B00</h6>
+                    <h5>管理系統-目錄管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B00-00 </a><a class="text">新增範本</a></li>
+                  <li class="minbutton"><a class="sign">B00-01 </a><a class="text">上報標籤</a></li>
+                  <li class="minbutton"><a class="sign">B00-02 </a><a class="text">新增連結</a></li>
+                  <li class="minbutton"><a class="sign">B00-03 </a><a class="text">新增目錄</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B01" type="checkbox" name="sub-group-B01"/>
+                <label for="sub-group-B01">
+                  <div class="midbutton">
+                    <h6>B01</h6>
+                    <h5>管理系統-使用者管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B01-00 </a><a class="text">所有使用者</a></li>
+                  <li class="minbutton"><a class="sign">B01-01 </a><a class="text">機構部門</a></li>
+                  <li class="minbutton"><a class="sign">B01-02 </a><a class="text">角色</a></li>
+                  <li class="minbutton"><a class="sign">B01-03 </a><a class="text">平台使用者</a></li>
+                  <li class="minbutton"><a class="sign">B01-04 </a><a class="text">全局設定(使用者管理)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B02" type="checkbox" name="sub-group-B02"/>
+                <label for="sub-group-B02">
+                  <div class="midbutton">
+                    <h6>B02</h6>
+                    <h5>管理系統-權限管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B02-00 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-01 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-02 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-03 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-04 </a><a class="text">權限快捷設定</a></li>
+                  <li class="minbutton"><a class="sign">B02-05 </a><a class="text">全局設定(權限管理)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-C" type="checkbox" name="sub-group-C"/>
+            <label for="sub-group-C">
+              <div class="bigbutton">
+                <h6>C</h6>
+                <h4>插件應用</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-C00" type="checkbox" name="sub-group-C00"/>
+                <label for="sub-group-C00">
+                  <div class="midbutton">
+                    <h6>C00</h6>
+                    <h5>設計器(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C00-00 </a><a class="text">設計器內存監控(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C01" type="checkbox" name="sub-group-C01"/>
+                <label for="sub-group-C01">
+                  <div class="midbutton">
+                    <h6>C01</h6>
+                    <h5>設計器(非官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C01-00 </a><a class="text">數據集中SQL可全屏(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-01 </a><a class="text">增強公式編輯器(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-02 </a><a class="text">10.0高級數據庫查詢(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-03 </a><a class="text">可選擇性黏貼(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-04 </a><a class="text">10.0日誌插件(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C02" type="checkbox" name="sub-group-C02"/>
+                <label for="sub-group-C02">
+                  <div class="midbutton">
+                    <h6>C02</h6>
+                    <h5>前端展現(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C02-00 </a><a class="text">表單內報表塊刷新(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-01 </a><a class="text">單元格進度條(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-02 </a><a class="text">滾動消息控件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-03 </a><a>數字時鐘控件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-04 </a><a class="text">條件屬性可使用頁碼參數(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-05 </a><a class="text">控件以711版本的外觀展式(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-06 </a><a class="text">國標CODE128條形碼(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-07 </a><a class="text">縮進比例控制(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-08 </a><a class="text">模版短信事件(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-09 </a><a class="text">自定義滾動條(付費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-10 </a><a class="text">組件加載動畫(付費)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    //切換tabs
+    $(function(){
+        var $li = $('.top ul li');
+            $($li. eq(0) .addClass('on').find('a').attr('href')).siblings('.bottom').hide();
+
+            $li.click(function(){
+                $($(this).find('a'). attr ('href')).show().siblings ('.bottom').hide();
+                $(this).addClass('on'). siblings ('.on').removeClass('on');
+            });
+        });
+
+    //點選.sign變藍
+    $("li.minbutton").click(
+      function() {
+        $(this).find("a.sign").addClass("on");
+      }
+    );
+
+    //展開收合
+    jQuery(document).ready(function(){
+        var sidebar = $('.sidebar');
+
+        if( sidebar.length > 0 ) {
+            sidebar.each(function(){
+                //detect change in the input[type="checkbox"] value
+                $(this).on('change', 'input[type="checkbox"]', function(){
+                    var checkbox = $(this);
+                    console.log(checkbox.prop('checked'));
+                    ( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+                });
+            });
+        }
+    });
+  </script>
+</html>
