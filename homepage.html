@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FR - Homepage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      @charset "UTF-8";
+      * {
+        font-family: "Microsoft JhengHei";
+        font-weight: 100;
+        color: #2b2d2d;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #f4f5f6;
+      }
+
+      h2, h3, h4, h6, p, ul, li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .main {
+        height: calc(100% - 240px);
+      }
+      .main .mainblock {
+        position: relative;
+        height: calc(100% - 30px);
+        padding: 15px;
+      }
+      .main .mainblock .leftblock {
+        position: relative;
+        float: left;
+        width: calc(100% - 350px);
+        height: 100%;
+      }
+      .main .mainblock .leftblock .area.t {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        margin-bottom: 15px;
+        padding: 15px;
+        border: 1px solid #dfe1e5;
+        border-radius: 5px;
+        background-color: #fafafa;
+      }
+      .main .mainblock .leftblock .area.t .content {
+        position: relative;
+        width: calc(100% - 250px);
+      }
+      .main .mainblock .leftblock .area.t .content h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .main .mainblock .leftblock .area.t .content ul {
+        width: 100%;
+        padding-left: 25px;
+      }
+      .main .mainblock .leftblock .area.t .content ul li {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+      .main .mainblock .leftblock .area.t div img {
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 220px;
+      }
+      .main .mainblock .leftblock .area.b, .main .mainblock .leftblock .t, .main .mainblock .leftblock .b {
+        position: relative;
+        width: 100%;
+      }
+      .main .mainblock .leftblock .area.b .t, .main .mainblock .leftblock .t .t, .main .mainblock .leftblock .b .t {
+        position: relative;
+        height: 217px;
+        margin-bottom: 10px;
+      }
+      .main .mainblock .leftblock .area.b .t .area.lt, .main .mainblock .leftblock .t .t .area.lt, .main .mainblock .leftblock .b .t .area.lt {
+        float: left;
+        margin-bottom: 10px;
+      }
+      .main .mainblock .leftblock .area.b .t .area.rt, .main .mainblock .leftblock .t .t .area.rt, .main .mainblock .leftblock .b .t .area.rt {
+        float: right;
+      }
+      .main .mainblock .leftblock .area.b .b, .main .mainblock .leftblock .t .b, .main .mainblock .leftblock .b .b {
+        position: relative;
+        height: 217px;
+      }
+      .main .mainblock .leftblock .area.b .b .area.lb, .main .mainblock .leftblock .t .b .area.lb, .main .mainblock .leftblock .b .b .area.lb {
+        float: left;
+      }
+      .main .mainblock .leftblock .area.b .b .area.rb, .main .mainblock .leftblock .t .b .area.rb, .main .mainblock .leftblock .b .b .area.rb {
+        float: right;
+      }
+      .main .mainblock .leftblock .area.b .area.lt, .main .mainblock .leftblock .area.b .area.rt, .main .mainblock .leftblock .area.b .area.lb, .main .mainblock .leftblock .area.b .area.rb, .main .mainblock .leftblock .t .area.lt, .main .mainblock .leftblock .t .area.rt, .main .mainblock .leftblock .t .area.lb, .main .mainblock .leftblock .t .area.rb, .main .mainblock .leftblock .b .area.lt, .main .mainblock .leftblock .b .area.rt, .main .mainblock .leftblock .b .area.lb, .main .mainblock .leftblock .b .area.rb {
+        position: relative;
+        display: inline-block;
+        padding: 15px 35px;
+        width: calc(50% - 5px);
+        border: 1px solid #dfe1e5;
+        border-radius: 5px;
+        background-color: #fafafa;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .title, .main .mainblock .leftblock .area.b .area.rt .title, .main .mainblock .leftblock .area.b .area.lb .title, .main .mainblock .leftblock .area.b .area.rb .title, .main .mainblock .leftblock .t .area.lt .title, .main .mainblock .leftblock .t .area.rt .title, .main .mainblock .leftblock .t .area.lb .title, .main .mainblock .leftblock .t .area.rb .title, .main .mainblock .leftblock .b .area.lt .title, .main .mainblock .leftblock .b .area.rt .title, .main .mainblock .leftblock .b .area.lb .title, .main .mainblock .leftblock .b .area.rb .title {
+        position: relative;
+        display: flex;
+        width: 100%;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .title h3, .main .mainblock .leftblock .area.b .area.rt .title h3, .main .mainblock .leftblock .area.b .area.lb .title h3, .main .mainblock .leftblock .area.b .area.rb .title h3, .main .mainblock .leftblock .t .area.lt .title h3, .main .mainblock .leftblock .t .area.rt .title h3, .main .mainblock .leftblock .t .area.lb .title h3, .main .mainblock .leftblock .t .area.rb .title h3, .main .mainblock .leftblock .b .area.lt .title h3, .main .mainblock .leftblock .b .area.rt .title h3, .main .mainblock .leftblock .b .area.lb .title h3, .main .mainblock .leftblock .b .area.rb .title h3 {
+        margin-left: 7px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .title a, .main .mainblock .leftblock .area.b .area.rt .title a, .main .mainblock .leftblock .area.b .area.lb .title a, .main .mainblock .leftblock .area.b .area.rb .title a, .main .mainblock .leftblock .t .area.lt .title a, .main .mainblock .leftblock .t .area.rt .title a, .main .mainblock .leftblock .t .area.lb .title a, .main .mainblock .leftblock .t .area.rb .title a, .main .mainblock .leftblock .b .area.lt .title a, .main .mainblock .leftblock .b .area.rt .title a, .main .mainblock .leftblock .b .area.lb .title a, .main .mainblock .leftblock .b .area.rb .title a {
+        position: absolute;
+        right: 0px;
+        font-size: 13px;
+        color: #1a73e8;
+        text-decoration: none;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .title a:hover, .main .mainblock .leftblock .area.b .area.rt .title a:hover, .main .mainblock .leftblock .area.b .area.lb .title a:hover, .main .mainblock .leftblock .area.b .area.rb .title a:hover, .main .mainblock .leftblock .t .area.lt .title a:hover, .main .mainblock .leftblock .t .area.rt .title a:hover, .main .mainblock .leftblock .t .area.lb .title a:hover, .main .mainblock .leftblock .t .area.rb .title a:hover, .main .mainblock .leftblock .b .area.lt .title a:hover, .main .mainblock .leftblock .b .area.rt .title a:hover, .main .mainblock .leftblock .b .area.lb .title a:hover, .main .mainblock .leftblock .b .area.rb .title a:hover {
+        text-decoration: underline;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .title img, .main .mainblock .leftblock .area.b .area.rt .title img, .main .mainblock .leftblock .area.b .area.lb .title img, .main .mainblock .leftblock .area.b .area.rb .title img, .main .mainblock .leftblock .t .area.lt .title img, .main .mainblock .leftblock .t .area.rt .title img, .main .mainblock .leftblock .t .area.lb .title img, .main .mainblock .leftblock .t .area.rb .title img, .main .mainblock .leftblock .b .area.lt .title img, .main .mainblock .leftblock .b .area.rt .title img, .main .mainblock .leftblock .b .area.lb .title img, .main .mainblock .leftblock .b .area.rb .title img {
+        position: absolute;
+        top: 3px;
+        left: -15px;
+        width: 20px;
+        height: 20px;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .content, .main .mainblock .leftblock .area.b .area.rt .content, .main .mainblock .leftblock .area.b .area.lb .content, .main .mainblock .leftblock .area.b .area.rb .content, .main .mainblock .leftblock .t .area.lt .content, .main .mainblock .leftblock .t .area.rt .content, .main .mainblock .leftblock .t .area.lb .content, .main .mainblock .leftblock .t .area.rb .content, .main .mainblock .leftblock .b .area.lt .content, .main .mainblock .leftblock .b .area.rt .content, .main .mainblock .leftblock .b .area.lb .content, .main .mainblock .leftblock .b .area.rb .content {
+        position: relative;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .content li, .main .mainblock .leftblock .area.b .area.rt .content li, .main .mainblock .leftblock .area.b .area.lb .content li, .main .mainblock .leftblock .area.b .area.rb .content li, .main .mainblock .leftblock .t .area.lt .content li, .main .mainblock .leftblock .t .area.rt .content li, .main .mainblock .leftblock .t .area.lb .content li, .main .mainblock .leftblock .t .area.rb .content li, .main .mainblock .leftblock .b .area.lt .content li, .main .mainblock .leftblock .b .area.rt .content li, .main .mainblock .leftblock .b .area.lb .content li, .main .mainblock .leftblock .b .area.rb .content li {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 25px;
+        list-style: none;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .content li:before, .main .mainblock .leftblock .area.b .area.rt .content li:before, .main .mainblock .leftblock .area.b .area.lb .content li:before, .main .mainblock .leftblock .area.b .area.rb .content li:before, .main .mainblock .leftblock .t .area.lt .content li:before, .main .mainblock .leftblock .t .area.rt .content li:before, .main .mainblock .leftblock .t .area.lb .content li:before, .main .mainblock .leftblock .t .area.rb .content li:before, .main .mainblock .leftblock .b .area.lt .content li:before, .main .mainblock .leftblock .b .area.rt .content li:before, .main .mainblock .leftblock .b .area.lb .content li:before, .main .mainblock .leftblock .b .area.rb .content li:before {
+        position: absolute;
+        left: -10px;
+        content: "•";
+        color: #686868;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .content li a, .main .mainblock .leftblock .area.b .area.rt .content li a, .main .mainblock .leftblock .area.b .area.lb .content li a, .main .mainblock .leftblock .area.b .area.rb .content li a, .main .mainblock .leftblock .t .area.lt .content li a, .main .mainblock .leftblock .t .area.rt .content li a, .main .mainblock .leftblock .t .area.lb .content li a, .main .mainblock .leftblock .t .area.rb .content li a, .main .mainblock .leftblock .b .area.lt .content li a, .main .mainblock .leftblock .b .area.rt .content li a, .main .mainblock .leftblock .b .area.lb .content li a, .main .mainblock .leftblock .b .area.rb .content li a {
+        margin-left: 5px;
+        text-decoration: none;
+      }
+      .main .mainblock .leftblock .area.b .area.lt .content li a:hover, .main .mainblock .leftblock .area.b .area.rt .content li a:hover, .main .mainblock .leftblock .area.b .area.lb .content li a:hover, .main .mainblock .leftblock .area.b .area.rb .content li a:hover, .main .mainblock .leftblock .t .area.lt .content li a:hover, .main .mainblock .leftblock .t .area.rt .content li a:hover, .main .mainblock .leftblock .t .area.lb .content li a:hover, .main .mainblock .leftblock .t .area.rb .content li a:hover, .main .mainblock .leftblock .b .area.lt .content li a:hover, .main .mainblock .leftblock .b .area.rt .content li a:hover, .main .mainblock .leftblock .b .area.lb .content li a:hover, .main .mainblock .leftblock .b .area.rb .content li a:hover {
+        color: #1a73e8;
+        text-decoration: underline;
+      }
+      .main .mainblock .leftblock .area.b .lt, .main .mainblock .leftblock .t .lt, .main .mainblock .leftblock .b .lt {
+        top: 0;
+        left: 0;
+      }
+      .main .mainblock .leftblock .area.b .rt, .main .mainblock .leftblock .t .rt, .main .mainblock .leftblock .b .rt {
+        top: 0;
+        right: 0;
+      }
+      .main .mainblock .leftblock .area.b .lb, .main .mainblock .leftblock .t .lb, .main .mainblock .leftblock .b .lb {
+        bottom: 0;
+        left: 0;
+      }
+      .main .mainblock .leftblock .area.b .rb, .main .mainblock .leftblock .t .rb, .main .mainblock .leftblock .b .rb {
+        bottom: 0;
+        right: 0;
+      }
+      .main .mainblock .rightblock {
+        position: relative;
+        float: right;
+        width: 350px;
+        height: 100%;
+        padding-left: 30px;
+      }
+      .main .mainblock .rightblock .area {
+        padding: 15px;
+        border: 1px solid #dfe1e5;
+        border-radius: 5px;
+        background-color: #fafafa;
+      }
+      .main .mainblock .rightblock .area h3 {
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: 900;
+      }
+      .main .mainblock .rightblock .area h4 {
+        position: relative;
+        margin-bottom: 5px;
+        padding-left: 5px;
+        font-weight: 900;
+      }
+      .main .mainblock .rightblock .area h4:before {
+        position: absolute;
+        top: 6px;
+        left: -3px;
+        width: 2px;
+        height: 10px;
+        content: "";
+        border-left: 3px solid #1C85E7;
+      }
+      .main .mainblock .rightblock .area p, .main .mainblock .rightblock .area li, .main .mainblock .rightblock .area span {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1px;
+      }
+      .main .mainblock .rightblock .area li {
+        list-style: none;
+      }
+      .main .mainblock .rightblock .area a {
+        color: #2b2d2d;
+        text-decoration: none;
+      }
+      .main .mainblock .rightblock .area a:hover {
+        color: #1a73e8;
+        text-decoration: underline;
+      }
+      .main .mainblock .rightblock .area .link {
+        color: #1a73e8;
+      }
+      .main .mainblock .rightblock .area .imp {
+        color: #e94235;
+      }
+      .main .mainblock .rightblock .area button {
+        margin: 20px 5px 0px 5px;
+        padding: 5px 25px;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+      }
+      .main .mainblock .rightblock .area .btnCreate {
+        background-color: #34a853;
+      }
+      .main .mainblock .rightblock .area .btnCreate:hover {
+        background-color: #43ba62;
+      }
+      .main .mainblock .rightblock .area .btnGet {
+        background-color: #1a73e8;
+      }
+      .main .mainblock .rightblock .area .btnGet:hover {
+        background-color: #4993f4;
+      }
+      .main .mainblock .rightblock .area img {
+        margin-top: 5px;
+        width: 288px;
+        height: 118.681px;
+      }
+      .main .mainblock .rightblock .t, .main .mainblock .rightblock .m {
+        margin-bottom: 15px;
+      }
+
+      .foot {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #3d3f41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="mainblock">
+        <div class="leftblock">
+          <div class="area t">
+            <div class="content">
+              <h2>初識Finereport</h2>
+              <ul>
+                <li>FineReport 是帆軟自主研發的企業級 web 報表工具，經過多年的打磨，已經成長為中國報表軟件領導品牌。</li>
+                <li>FineReport 以其零編碼的理念，易學易用，功能強大，簡單拖拽操作便可制作中國式復雜報表。</li>
+              </ul>
+            </div>
+            <div><a href=""><img src="https://help.finereport.com/style/bnvd.png"/></a></div>
+          </div>
+          <div class="area b">
+            <div class="t">
+              <div class="area lt">
+                <div class="title"><img src="http://help.finereport.com.tw/view/help2019tw/css/img/ihm1.png"/>
+                  <h3>幫助手冊</h3><a href="#">更多>></a>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li><a href="#">歡迎使用幫助文檔</a></li>
+                    <li><a href="#">技術文檔寫作流程規範</a></li>
+                    <li><a href="#">文檔圖示標註規範</a></li>
+                    <li><a href="#">通用詞規範</a></li>
+                    <li><a href="#">幫助文檔編輯器</a></li>
+                    <li><a href="#">文檔關註功能</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="area rt">
+                <div class="title"><img src="http://help.finereport.com.tw/view/help2019tw/css/img/ihm2.png"/>
+                  <h3>快速入門</h3><a href="#">更多>></a>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li><a href="#">第一張模板</a></li>
+                    <li><a href="#">快速入門</a></li>
+                    <li><a href="#">移動端入門</a></li>
+                    <li><a href="#">填報入門</a></li>
+                    <li><a href="#">參數入門</a></li>
+                    <li><a href="#">父子格設置</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="b">
+              <div class="area lb">
+                <div class="title"><img src="http://help.finereport.com.tw/view/help2019tw/css/img/ihm3.png"/>
+                  <h3>常見問題</h3><a href="#">更多>></a>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li><a href="#">FineReport服務器註冊步驟</a></li>
+                    <li><a href="#">報錯500:服務器部署需引入tools.jar</a></li>
+                    <li><a href="#">9-10升級工具</a></li>
+                    <li><a href="#">10.0更新日誌</a></li>
+                    <li><a href="#">FineReport版本說明</a></li>
+                    <li><a href="#">FineReport升級指南</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="area rb">
+                <div class="title"><img src="http://help.finereport.com.tw/view/help2019tw/css/img/ihm4.png"/>
+                  <h3>最新文檔</h3><a href="#">更多>></a>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rightblock">
+          <div class="area t">
+            <h3>文檔共創計劃 </h3>
+            <p>帆軟幫助文檔是壹個開放式的文檔，人人都可以參與編輯完善，並獲得報酬與榮譽。</p><span><a class="link" href="#">了解詳情->></a></span><img src="https://help.finereport.com/style/jihua.png"/>
+            <div style="display: flex; justify-content:center;">
+              <button class="btnCreate">創建文檔</button>
+              <button class="btnGet">認領任務</button>
+            </div>
+          </div>
+          <div class="area m">
+            <h4>其他版本</h4>
+            <ul>
+              <li><a href="#">FineReport 8.0 幫助文檔</a></li>
+              <li><a href="#">FineReport 7.1.1 幫助文檔</a></li>
+              <li><a href="#">FineReport 7.0.5 幫助文檔</a></li>
+              <li><a href="#">FineReport 6.5 幫助文檔</a></li>
+            </ul>
+          </div>
+          <div class="area b">
+            <h4>關於我們</h4>
+            <p>FineReport幫助文檔由<span class="imp">530</span><span>位帆薯共同撰寫而成，目前已收錄</span><span class="imp">1853</span><span>篇，並且還在不斷地完善，感謝帆薯們一路陪伴。 </span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    
+  </script>
+</html>
