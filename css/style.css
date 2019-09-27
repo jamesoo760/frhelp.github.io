@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #3bff00;
+  background-color: #f4f5f6;
 }
 
 #FRhomepage {
@@ -17,6 +17,15 @@ body {
   width: 100%;
   padding-bottom: 30px;
   background-color: #f4f5f6;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*focus*/
+.on {
+  background-color: #1a73e8 !important;
+}
+.on a {
+  color: #fafafa;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -95,13 +104,146 @@ body {
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*sidebar*/
-#FRhomepage #sidebar {
+#FRhomepage .sidebar {
   position: absolute;
+  display: block !important;
   float: left;
+  overflow: auto;
   width: 280px;
   height: calc(100vh - 90px);
   border-right: 1px solid #dfe1e5;
+  background-color: #f4f5f6;
+}
+.sidebar li {
+  list-style: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.sidebar .top {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #dfe1e5;
+}
+.sidebar .top ul {
+  display: flex;
+  justify-content: center;
+}
+.sidebar .top ul li {
+  margin: 19px 2px;
+  padding: 5px 25px;
+  list-style: none;
+  border-radius: 100px;
   background-color: #fafafa;
+  box-shadow: 0 0 1px 1px rgba(45, 45, 45, 0.1);
+  cursor: pointer;
+}
+.sidebar .top ul li a {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.sidebar .bottom {
+  width: 100%;
+  //height: 100%;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton {
+  border-bottom: 1px solid #dfe1e5;
+  background-color: #fafafa;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton input {
+  position: absolute;
+  opacity: 0;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton label {
+  position: relative;
+  cursor: pointer;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton {
+  position: relative;
+  height: 50px;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton h6 {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  color: #fafafa;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #1a73e8;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton label div.bigbutton h4 {
+  position: absolute;
+  top: 50%;
+  left: 55px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 16px;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton {
+  display: none;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton {
+  line-height: 30px;
+  font-size: 16px;
+  border-top: 1px solid #dfe1e5;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton div.midbutton h6 {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 5px;
+  float: left;
+  letter-spacing: 1.5px;
+  color: #fafafa;
+  background-color: #dfe1e5;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton div.midbutton h5 {
+  background-color: #f4f5f6;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton {
+  display: none;
+  background-color: #e8eaef;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton {
+  font-size: 12px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton:first-child {
+  border-top: 1px solid #dfe1e5;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton:hover {
+  background-color: #d7dae0;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.sidebar .bottom ul.buttonblock li.bigbutton ul.midbutton li.midbutton ul.minbutton li.minbutton .sign {
+  padding: 2px 5px 2px 5px;
+  margin: 0px 5px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #b6bac4;
+}
+/*scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.sidebar::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: #ebebeb;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(61, 63, 65, 0.2);
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -164,6 +306,12 @@ body {
   text-decoration: none;
   cursor: default;
 }
+.pagebar ul li .hometag {
+  padding: 0;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
 .pagebar ul li .x {
   position: relative;
   display: inline-block;
@@ -189,7 +337,7 @@ body {
 .main .mainblock .leftblock {
   position: relative;
   float: left;
-  width: calc(100% - 350px);
+  width: calc(100% - 330px);
   height: 100%;
 }
 .main .mainblock .leftblock .area.t {
@@ -331,9 +479,9 @@ body {
 .main .mainblock .rightblock {
   position: relative;
   float: right;
-  width: 350px;
+  width: 330px;
   height: 100%;
-  padding-left: 30px;
+  padding-left: 15px;
 }
 .main .mainblock .rightblock .area {
   padding: 15px;

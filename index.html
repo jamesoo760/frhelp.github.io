@@ -1,66 +1,269 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Finereport Help Center</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/style.css" charset="utf-8">
-    <style></style>
-  </head>
-  <body>
-    <div id="FRhomepage">
-      <header class="header">
-        <div class="logo"></div>
-        <div class="nav-wrapper">
-          <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}"></span>
-          <nav class="user-nav" id="user-nav">
-            <div class="user-navli">文檔</div>
-            <div class="user-navli">任務</div>
-            <div class="user-navli">Demo</div>
-            <div class="user-navli">官網</div>
-            <div class="user-navli">論壇</div>
-            <div class="user-navli">提問</div>
-            <div class="user-navli">視頻</div>
-            <div class="user-navli">認證</div>
-            <div class="user-navli">更多</div>
-            <!--{{link 'community'}}
-            {{link 'new_request' class='submit-a-request'}}-->
-          </nav>
-        </div>
-      </header>
-      <div class="sidebar">
-        <iframe id="sidebar" src="https://jamesoo760.github.io/frhelp.github.io/selectbar.html" frameborder="0" scrolling="auto"></iframe>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>帆軟幫助中心 - Finereport Help Center</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/style.css" charset="utf-8">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="FRhomepage">
+    <header class="header">
+      <div class="logo"></div>
+      <div class="nav-wrapper">
+        <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}"></span>
+        <nav class="user-nav" id="user-nav">
+          <div class="user-navli">文檔</div>
+          <div class="user-navli">任務</div>
+          <div class="user-navli">Demo</div>
+          <div class="user-navli">官網</div>
+          <div class="user-navli">論壇</div>
+          <div class="user-navli">提問</div>
+          <div class="user-navli">視頻</div>
+          <div class="user-navli">認證</div>
+          <div class="user-navli">更多</div>
+        </nav>
       </div>
-      <div class="main">
-        <div class="pagebar" id="tabs">
-          <ul class="nav nav-tabs" id="myTab">
-            <li id="hometag" class="active">
-              <a class="title" data-toggle="tab" href="#hometag">
-                <img src="http://help.finereport.com.tw/view/help2019/resources/images/icon_home.png"/>
-              </a>
-            </li>
-            <li id="tab-100"><a class="title" data-toggle="tab" href="#tab-content-100">第100頁</a>
-              <div class="x" onclick="deleteTab(100)"></div>
-            </li>
-            <li id="tab-101"><a class="title" data-toggle="tab" href="#tab-content-101">第101頁</a>
-              <div class="x" onclick="deleteTab(101)"></div>
-            </li>
-            <li id="tab-10000002"><a class="title" data-toggle="tab" href="#tab-content-102">第10000002頁</a>
-              <div class="x" onclick="deleteTab(10000002)"></div>
-            </li>
-          </ul>
-        </div>
-        <iframe id="tabCon" class="mainblock" src="https://jamesoo760.github.io/frhelp.github.io/model1.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+    <div class="sidebar">
+      <div class="top">
+        <ul>
+          <li class="on"><a href="#tabs-learn">功能學習</a></li>
+          <li><a href="#tabs-practice">實例練習</a></li>
+        </ul>
       </div>
-      <footer class="footer"></footer>
+      <div class="bottom learn" id="tabs-learn">
+        <ul class="buttonblock">
+          <li class="bigbutton">
+            <input id="sub-group-A" type="checkbox" name="sub-group-A"/>
+            <label for="sub-group-A">
+              <div class="bigbutton">
+                <h6>A</h6>
+                <h4>報表設計器</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-A00" type="checkbox" name="sub-group-A00"/>
+                <label for="sub-group-A00">
+                  <div class="midbutton">
+                    <h6>A00</h6>
+                    <h5>使用報表設計器</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A00-00 </a><a class="text">安裝報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-01 </a><a class="text">打開報表設計器</a></li>
+                  <li class="minbutton"><a class="sign">A00-02 </a><a class="text">獲取激活碼</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A01" type="checkbox" name="sub-group-A01"/>
+                <label for="sub-group-A01">
+                  <div class="midbutton">
+                    <h6>A01</h6>
+                    <h5>資料來源連接</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A01-00 </a><a class="text">資料連接-Excel, CSV</a></li>
+                  <li class="minbutton"><a class="sign">A01-01 </a><a class="text">資料連接-SQL Server</a></li>
+                  <li class="minbutton"><a class="sign">A01-02 </a><a class="text">資料連接-My SQL</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-A02" type="checkbox" name="sub-group-A02"/>
+                <label for="sub-group-A02">
+                  <div class="midbutton">
+                    <h6>A02</h6>
+                    <h5>建立報表</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">A02-00 </a><a class="text">新建普通報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-01 </a><a class="text">新建複合式報表</a></li>
+                  <li class="minbutton"><a class="sign">A02-02 </a><a class="text">新建決策報表</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-B" type="checkbox" name="sub-group-B"/>
+            <label for="sub-group-B">
+              <div class="bigbutton">
+                <h6>B</h6>
+                <h4>決策平台</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-B00" type="checkbox" name="sub-group-B00"/>
+                <label for="sub-group-B00">
+                  <div class="midbutton">
+                    <h6>B00</h6>
+                    <h5>管理系統-目錄管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B00-00 </a><a class="text">新增範本</a></li>
+                  <li class="minbutton"><a class="sign">B00-01 </a><a class="text">上報標籤</a></li>
+                  <li class="minbutton"><a class="sign">B00-02 </a><a class="text">新增連結</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B01" type="checkbox" name="sub-group-B01"/>
+                <label for="sub-group-B01">
+                  <div class="midbutton">
+                    <h6>B01</h6>
+                    <h5>管理系統-使用者管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B01-00 </a><a class="text">所有使用者</a></li>
+                  <li class="minbutton"><a class="sign">B01-01 </a><a class="text">機構部門</a></li>
+                  <li class="minbutton"><a class="sign">B01-02 </a><a class="text">角色</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-B02" type="checkbox" name="sub-group-B02"/>
+                <label for="sub-group-B02">
+                  <div class="midbutton">
+                    <h6>B02</h6>
+                    <h5>管理系統-權限管理</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">B02-00 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-01 </a><a class="text">權限設定-人員管理</a></li>
+                  <li class="minbutton"><a class="sign">B02-02 </a><a class="text">權限設定-人員管理</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="bigbutton">
+            <input id="sub-group-C" type="checkbox" name="sub-group-C"/>
+            <label for="sub-group-C">
+              <div class="bigbutton">
+                <h6>C</h6>
+                <h4>插件應用</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-C00" type="checkbox" name="sub-group-C00"/>
+                <label for="sub-group-C00">
+                  <div class="midbutton">
+                    <h6>C00</h6>
+                    <h5>設計器(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C00-00 </a><a class="text">設計器內存監控(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C01" type="checkbox" name="sub-group-C01"/>
+                <label for="sub-group-C01">
+                  <div class="midbutton">
+                    <h6>C01</h6>
+                    <h5>設計器(非官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C01-00 </a><a class="text">數據集中SQL可全屏(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-01 </a><a class="text">增強公式編輯器(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C01-02 </a><a class="text">10.0高級數據庫查詢(免費)</a></li>
+                </ul>
+              </li>
+              <li class="midbutton">
+                <input id="sub-group-C02" type="checkbox" name="sub-group-C02"/>
+                <label for="sub-group-C02">
+                  <div class="midbutton">
+                    <h6>C02</h6>
+                    <h5>前端展現(官方)</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton"><a class="sign">C02-00 </a><a class="text">表單內報表塊刷新(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-01 </a><a class="text">單元格進度條(免費)</a></li>
+                  <li class="minbutton"><a class="sign">C02-02 </a><a class="text">滾動消息控件(免費)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom practice" id="tabs-practice">
+        <ul class="buttonblock">
+          <li class="bigbutton">
+            <input id="sub-group-AT" type="checkbox" name="sub-group-AT"/>
+            <label for="sub-group-AT">
+              <div class="bigbutton">
+                <h6>A</h6>
+                <h4>報表設計器</h4>
+              </div>
+            </label>
+            <ul class="midbutton">
+              <li class="midbutton">
+                <input id="sub-group-AT00" type="checkbox" name="sub-group-AT00"/>
+                <label for="sub-group-AT00">
+                  <div class="midbutton">
+                    <h6>A00</h6>
+                    <h5>使用報表設計器</h5>
+                  </div>
+                </label>
+                <ul class="minbutton">
+                  <li class="minbutton">
+                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a" target="_mainiframe">
+                      <span class="sign">A00-00 </span>
+                      <span class="text">安裝報表設計器</span>
+                    </a>
+                  </li>
+                  <li class="minbutton">
+                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a" target="_mainiframe">
+                      <span class="sign">A00-01 </span>
+                      <span class="text">打開報表設計器</span>
+                    </a>
+                  </li>
+                  <li class="minbutton">
+                    <a id="doc-a00-02" href="/doc-a00-02.html" target="_mainiframe">
+                      <span class="sign">A00-02 </span>
+                      <span class="text">獲取激活碼</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-  </body>
-  <script src="javascript/script.js"></script>
+    <div class="main">
+      <div class="pagebar" id="tabs">
+        <ul class="nav nav-tabs" id="myTab">
+          <li id="hometag" class="active">
+            <a class="title hometag" data-toggle="tab" href="#hometag">
+              <img src="images/icon.png"/>
+            </a>
+          </li>
+          <li id="tab-100"><a class="title" data-toggle="tab" href="#tab-content-100">第100頁</a>
+            <div class="x" onclick="deleteTab(100)"></div>
+          </li>
+          <li id="tab-101"><a class="title" data-toggle="tab" href="#tab-content-101">第101頁</a>
+            <div class="x" onclick="deleteTab(101)"></div>
+          </li>
+          <li id="new"><a class="title" data-toggle="tab" href="#doc-a00-02">  </a>
+            <div class="x" onclick="deleteTab(10000002)"></div>
+          </li>
+        </ul>
+      </div>
+      <iframe id="tabCon" class="mainblock" src="https://jamesoo760.github.io/frhelp.github.io/model1.html" frameborder="0" scrolling="no" name="_mainiframe"></iframe>
+    </div>
+    <footer class="footer"></footer>
+  </div>
+</body>
+<script src="javascript/script.js"></script>
 </html>
-
-
-
-
-
-
-

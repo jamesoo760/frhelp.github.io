@@ -60,3 +60,46 @@ var btns = document.getElementById('myTab').getElementsByTagName('li');
             tabCon.src = 'model'+(this.index+1)+'.html';
         }
     };
+
+
+
+
+
+//切換tabs
+    $(function(){
+        var $li = $('.top ul li');
+            $($li. eq(0) .addClass('on').find('a').attr('href')).siblings('.bottom').hide();
+            $li.click(function(){
+                $($(this).find('a'). attr ('href')).show().siblings ('.bottom').hide();
+                $(this).addClass('on'). siblings ('.on').removeClass('on');
+            });
+        });
+    //點選.sign變藍
+    $("li.minbutton").click(
+      function() {
+        $(this).find("span.sign").addClass("on");
+      }
+    );
+    //展開收合
+    jQuery(document).ready(function(){
+        var sidebar = $('.sidebar');
+        if( sidebar.length > 0 ) {
+            sidebar.each(function(){
+                //detect change in the input[type="checkbox"] value
+                $(this).on('change', 'input[type="checkbox"]', function(){
+                    var checkbox = $(this);
+                    console.log(checkbox.prop('checked'));
+                    ( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+                });
+            });
+        }
+    });
+
+
+
+
+
+function ChangeString(){
+    var NewStringValue = $("a#doc-a00-02 span.text").value;
+    $("#new").html = NewStringValue;
+}
