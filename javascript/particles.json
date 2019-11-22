@@ -14,7 +14,7 @@
             }
         },
         "opacity":{
-            "value":0.1,
+            "value":1,
             "random":true
         },
         "size":{
@@ -22,7 +22,10 @@
         },
         "line_linked":{
             "enable":true,
-            "distance":110
+            "distance":110,
+            "color": "#3566fc",
+            "opacity": 0.7,
+            "width": 1
         },
         "move":{
             "enable":true,
