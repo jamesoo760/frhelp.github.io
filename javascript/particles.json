@@ -1,16 +1,16 @@
 {
     "particles":{
         "number":{
-            "value":80
+            "value":50
         },
         "color":{
-            "value":"#f9f3f4"
+            "value":"#4052dd"
         },
         "shape":{
             "type":"circle",
             "stroke":{
                 "width":1,
-                "color":"#ccc"
+                "color":"#4052dd"
             }
         },
         "opacity":{
