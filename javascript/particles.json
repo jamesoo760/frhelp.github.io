@@ -1,35 +1,35 @@
 {
-    "particles":{
-        "number":{
-            "value":50
-        },
-        "color":{
-            "value":"#4052dd"
-        },
-        "shape":{
-            "type":"circle",
-            "stroke":{
-                "width":1,
-                "color":"#4052dd"
-            }
-        },
-        "opacity":{
-            "value":1,
-            "random":true
-        },
-        "size":{
-            "value":2
-        },
-        "line_linked":{
-            "enable":true,
-            "distance":110,
-            "color": "#3566fc",
-            "opacity": 0.7,
-            "width": 1
-        },
-        "move":{
-            "enable":true,
-            "speed": 0.5
-        }
+  "particles":{
+    "number":{
+      "value":50
+    },
+    "color":{
+      "value":"#5f89bf"
+    },
+    "shape":{
+      "type":"circle",
+      "stroke":{
+        "width":2,
+        "color":"#4052dd"
+      }
+    },
+    "opacity":{
+      "value":1,
+      "random":true
+    },
+    "size":{
+      "value":2
+    },
+    "line_linked":{
+      "enable":true,
+      "distance":110,
+      "color": "#3566fc",
+      "opacity": 0.7,
+      "width": 1
+    },
+    "move":{
+      "enable":true,
+      "speed": 0.2
     }
+  }
 }
